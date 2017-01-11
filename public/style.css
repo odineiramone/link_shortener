@@ -6,17 +6,23 @@ body {
 
 h1 {
   font-family: 'Ewert', cursive;
-  font-size: xxx-large;
+  font-size: 10vmin;
 }
 
 .content {
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 .explanation {
   padding-top: 5%;
 }
 
+.missed-link,
 .link-shorted {
   margin-top: 5%;
+  visibility: hidden;
+}
+
+.link-shorted ul {
+  list-style-type:none;
 }

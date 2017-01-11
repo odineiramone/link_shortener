@@ -6,10 +6,28 @@
       <button class="btn btn-info" onclick="send_url()">short!</button>
     </div>
   </div>
+
   <p class="text-center explanation">Place your url on input above and click on <button class="btn btn-info">short!</button></p>
 
-  <div class="alert alert-info fade in link-shorted" type="hidden">
+  <div class="alert alert-danger fade in missed-link" id="missed-link">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Get your link:</strong> <span>http://x-pto.co/short_url</span>
+      <span class="info-text">Please, send an valid url</span>
+  </div>
+
+  <div class="alert alert-info fade in link-shorted" id="link-shorted">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <ul>
+      <li>
+        <strong>Your link</strong>
+        <span class="glyphicon glyphicon-arrow-right"></span>
+        <a class="your-link link" href="" target="_blank">http://x-pto.co/short_url</a>
+      </li>
+      <br>
+      <li>
+        <strong>Was turned into</strong>
+        <span class="glyphicon glyphicon-a target="_blank"rrow-right"></span>
+        <a class="short-link link" href="">http://x-pto.co/short_url</a>
+      </li>
+    </ul>
   </div>
 </div>

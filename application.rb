@@ -15,7 +15,6 @@ namespace '/api' do
 
     payload = { short_url: 'http://loda.sh/' + urls[:code] }
     payload[:original_url] = urls[:original_url]
-
     return payload.to_json
   end
 end
