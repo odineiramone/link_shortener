@@ -1,7 +1,8 @@
 class LinkShortner
-  def self.process_original_link(url)
+  def self.process_original_link(url, ip, time)
     code = generate_link_code
     # SometingTo.store url, code
+    { code => { original_url: url, code: code, client_ip: ip, accessed_on: time } }
 
     { original_url: url, code: code }
   end
