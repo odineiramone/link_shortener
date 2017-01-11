@@ -1,8 +1,6 @@
 configure :production, :development do
-  require './app/models/*'
-  require './lib//*'
+  require './app/models/link_shortner.rb'
 end
 
 configure :development do
-
 end
