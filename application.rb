@@ -6,8 +6,8 @@ get '/' do
 end
 
 get '/:code' do
-  redirect to '/'
-  # LinkShortner.find_link(code: params[:code])
+  original_url = LinkShortner.find_link(code: params[:code])
+  redirect to original_url
 end
 
 namespace '/api' do
@@ -16,7 +16,7 @@ namespace '/api' do
                                               request.ip,
                                               Time.now)
 
-    payload = { short_url: 'http://linkshort.ed/' + urls[:code] }
+    payload = { short_url: settings.base_url + urls[:code] }
     payload[:original_url] = urls[:original_url]
     return payload.to_json
   end
