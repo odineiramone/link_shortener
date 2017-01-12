@@ -10,4 +10,4 @@ Easy, isn't?
 
 ## Screenshot
 
-![ibagem.png](ibagem.png)
+![ibage.png](ibage.png)
