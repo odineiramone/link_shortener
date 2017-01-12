@@ -11,10 +11,7 @@ h1 {
 
 .input-group {
   box-shadow: 5px 5px 5px #888;
-}
-
-.form-control, .btn {
-  border-radius: 0px !important;
+  border-radius: 5px;
 }
 
 .content {
