@@ -1,8 +1,13 @@
 class LinkShortner
   def self.process_original_link(url, ip, time)
     code = generate_link_code
-    # SometingTo.store url, code
-    { code => { original_url: url, code: code, client_ip: ip, accessed_on: time } }
+
+    register = { code => { original_url: url,
+                           code: code,
+                           client_ip: ip,
+                           accessed_on: time.to_s } }
+
+    File.open('store.yml', 'a+') { |file| file.write(register.to_yaml) }
 
     { original_url: url, code: code }
   end

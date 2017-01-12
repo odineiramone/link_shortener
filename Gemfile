@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'json'
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'pry'
+gem 'tux'
+
+group :development, :test do
+  gem 'pry'
+end
