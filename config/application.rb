@@ -12,4 +12,7 @@ end
 
 configure :development do
   require 'pry'
+  require 'dotenv'
+
+  Dotenv.load
 end

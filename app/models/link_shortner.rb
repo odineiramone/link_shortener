@@ -5,28 +5,22 @@ class LinkShortner
     record[:original_url]
   end
 
-
   def self.process_original_link(url, ip, time)
     store_file = generate_file
     code = generate_link_code
 
     record = { code => { original_url: url,
-                           code: code,
-                           client_ip: ip,
-                           accessed_on: time.to_s } }
+                         code: code,
+                         client_ip: ip,
+                         accessed_on: time.to_s } }
 
-
-    File.open(store_file.name, 'a+') do |file|
-      file.write(record.to_yaml)
-    end
+    File.open(store_file.name, 'a+') { |file| file.write(record.to_yaml) }
 
     # remove dashes (---) from yml file
     system("sed -i -e 's/---//g' #{store_file.name}")
 
     { original_url: url, code: code }
   end
-
-  private
 
   def self.generate_file
     file = File.new Sinatra::Application.settings.store_file, 'a+'

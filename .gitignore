@@ -1,1 +1,3 @@
 store.yml
+.env*
+!.env.example

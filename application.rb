@@ -15,7 +15,7 @@ namespace '/api' do
     urls = LinkShortner.process_original_link(params[:complete_link],
                                               request.ip,
                                               Time.now)
-
+                                              binding.pry
     payload = { short_url: settings.base_url + urls[:code] }
     payload[:original_url] = urls[:original_url]
     return payload.to_json
