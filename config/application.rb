@@ -1,3 +1,10 @@
+configure :development do
+  require 'pry'
+  require 'dotenv'
+
+  Dotenv.load
+end
+
 configure :production, :development do
   require './app/models/link_shortner.rb'
   require './lib/file.rb'
@@ -7,12 +14,5 @@ configure :production, :development do
   require 'yaml'
   require 'ostruct'
 
-  config_file './config/secrets.yml'
-end
-
-configure :development do
-  require 'pry'
-  require 'dotenv'
-
-  Dotenv.load
+  config_file './config/secrets.yml.erb'
 end
