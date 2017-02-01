@@ -10,7 +10,7 @@ Easy, isn't?
 
 ## how2use?
 
-First of all, `bundle install`, please
+First of all, `gem install bundle` && `bundle install`, please
 
 Rename the `.env.example` file to just `.env`
 
