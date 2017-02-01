@@ -1,6 +1,6 @@
 class LinkShortner
   def self.find_link(code)
-    config = YAML.load_file('store.yml')
+    config = YAML.load_file(Sinatra::Application.settings.store_file)
     record = config.fetch(code[:code]) if config.keys.include?(code[:code])
     record[:original_url]
   end
