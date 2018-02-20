@@ -20,7 +20,7 @@ namespace '/api' do
 
     link = ShortedUrl.create(attributes)
 
-    payload = { short_url: settings.base_url + link.code }
+    payload = { short_url: 'http://' + settings.base_url + '/' + link.code }
     payload[:original_url] = link.original_url
     return payload.to_json
   end

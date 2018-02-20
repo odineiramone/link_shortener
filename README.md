@@ -16,16 +16,16 @@ Easy, isn't?
 
 ## Setup
 
-- First of all, `gem install bundle` && `bundle install`, please
+- Run `gem install bundle` and `bundle install` on terminal
 
 - Rename the `.env.example` file to `.env.development`
 
 - Fill the variables started with `DATA` with your database values
 
-    * *The variable `BASE_URL=` is the url base to your app, if you'll run locally, the value will be `http://localhost:4567/` (aka Sinatra address)*
+    * *The variable `BASE_URL=` is the url base to your app, if you'll run locally, the value will be `localhost:4567`*
 
 
-- Run `bundle exec rake db:create && bundle exec rake:migrate`
+- Run `bundle exec rake db:create && bundle exec rake db:migrate`
 
 - And then, run `ruby application.rb` and visit `http://localhost:4567`
 
