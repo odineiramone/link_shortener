@@ -1,3 +1,2 @@
-*.yml
 .env*
 !.env.example
