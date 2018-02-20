@@ -1,3 +1,5 @@
+set :environment, :development
+
 configure :development do
   require 'pry'
   require 'dotenv'
@@ -6,13 +8,16 @@ configure :development do
 end
 
 configure :production, :development do
-  require './app/models/link_shortner.rb'
   require './lib/file.rb'
   require 'sinatra/config_file'
   require 'sinatra/namespace'
   require 'json'
   require 'yaml'
   require 'ostruct'
+  require 'sinatra/activerecord'
 
   config_file './config/secrets.yml.erb'
+
+  current_dir = Dir.pwd
+  Dir["#{current_dir}/app/models/*.rb"].each { |file| require file }
 end
