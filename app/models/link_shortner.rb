@@ -17,7 +17,7 @@ class LinkShortner
     File.open(store_file.name, 'a+') { |file| file.write(record.to_yaml) }
 
     # remove dashes (---) from yml file
-    system("sed -i -e 's/---//g' #{store_file.name}")
+    system("sed -i 's/---//g' #{store_file.name}")
 
     { original_url: url, code: code }
   end
