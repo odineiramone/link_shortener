@@ -6,18 +6,22 @@ get '/' do
 end
 
 get '/:code' do
-  original_url = LinkShortner.find_link(code: params[:code])
-  redirect to original_url
+  shorted_url = ShortedUrl.find_by(code: params[:code])
+  redirect to shorted_url.original_url
 end
 
 namespace '/api' do
   post '/short_url' do
-    urls = LinkShortner.process_original_link(params[:complete_link],
-                                              request.ip,
-                                              Time.now)
+    attributes = {
+      code: SecureRandom.hex(3),
+      original_url: params[:complete_link],
+      request_ip: request.ip
+    }
 
-    payload = { short_url: settings.base_url + urls[:code] }
-    payload[:original_url] = urls[:original_url]
+    link = ShortedUrl.create(attributes)
+
+    payload = { short_url: settings.base_url + link.code }
+    payload[:original_url] = link.original_url
     return payload.to_json
   end
 end

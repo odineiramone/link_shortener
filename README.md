@@ -8,18 +8,26 @@
 
 Easy, isn't?
 
-## how2use?
+## Made with
 
-First of all, `gem install bundle` && `bundle install`, please
+- Ruby 2.5.0
+- Sinatra 2.0.1
+- Postgres :elephant:
 
-Rename the `.env.example` file to just `.env`
+## Setup
 
-Fill the variables with the correct values:
+- First of all, `gem install bundle` && `bundle install`, please
 
-- `STORE_FILE=` here is the YAML file where your data will be stored (ex: `my_data.yml`)
-- `BASE_URL=` url base to your app, if you'll run locally, the value will be `http://localhost:4567/` (aka Sinatra address)
+- Rename the `.env.example` file to `.env.development`
 
-And then, run `ruby application.rb` and visit `http://localhost:4567`
+- Fill the variables started with `DATA` with your database values
+
+    * *The variable `BASE_URL=` is the url base to your app, if you'll run locally, the value will be `http://localhost:4567/` (aka Sinatra address)*
+
+
+- Run `bundle exec rake db:create && bundle exec rake:migrate`
+
+- And then, run `ruby application.rb` and visit `http://localhost:4567`
 
 ## Screenshot
 
