@@ -1,4 +1,4 @@
-set :environment, ENV['RACK_ENV']
+set :environment, ENV['RACK_ENV'] ||= 'development'
 
 configure :development do
   require 'pry'
