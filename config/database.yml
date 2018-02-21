@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
   pool: <%= ENV['DATABASE_POOL'] || 2 %>
   database: <%= ENV['DATABASE_NAME'] %>
-  host: <%= ENV['DATABASE_URL'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
   username: <%= ENV['DATABASE_USER'] %>
   password: <%= ENV['DATABASE_PASS'] %>
 
