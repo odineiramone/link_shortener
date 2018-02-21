@@ -1,4 +1,4 @@
-set :environment, :development
+set :environment, ENV['RACK_ENV']
 
 configure :development do
   require 'pry'
